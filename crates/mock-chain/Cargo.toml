@@ -1,0 +1,37 @@
+[package]
+name = "auction-mock-chain"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "mock-chain"
+path = "src/main.rs"
+
+[dependencies]
+auction-types.workspace = true
+auction-module.workspace = true
+auction-crypto.workspace = true
+
+# JSON-RPC server
+jsonrpsee = { version = "0.24", features = ["server", "macros"] }
+
+# Async runtime
+tokio.workspace = true
+
+# Serialization
+serde.workspace = true
+serde_json.workspace = true
+borsh.workspace = true
+hex.workspace = true
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Error handling
+anyhow.workspace = true
+thiserror.workspace = true
+
+# Sync primitives
+parking_lot = "0.12"

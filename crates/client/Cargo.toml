@@ -7,13 +7,42 @@ repository.workspace = true
 authors.workspace = true
 description = "Client SDK for bidding in threshold-encrypted auctions"
 
+[[bin]]
+name = "auction-cli"
+path = "src/main.rs"
+
 [dependencies]
 auction-types.workspace = true
 auction-crypto.workspace = true
 rand.workspace = true
 borsh.workspace = true
 serde.workspace = true
+serde_json.workspace = true
 thiserror.workspace = true
+hex.workspace = true
+
+# JSON-RPC client
+jsonrpsee = { version = "0.24", features = ["http-client"] }
+
+# Async runtime
+tokio.workspace = true
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Error handling
+anyhow.workspace = true
+
+# CLI
+clap = { version = "4.5", features = ["derive"] }
+
+# BLS (for MPK parsing)
+bls12_381.workspace = true
+group.workspace = true
+
+# Crypto
+sha2.workspace = true
 
 [dev-dependencies]
 bls12_381.workspace = true

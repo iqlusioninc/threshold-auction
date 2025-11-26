@@ -22,6 +22,7 @@ Thumbs.db
 # Test artifacts
 *.profraw
 *.profdata
+/test-data/
 
 # Documentation
 /docs/build/

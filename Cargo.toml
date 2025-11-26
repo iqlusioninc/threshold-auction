@@ -10,6 +10,8 @@ members = [
     "crates/dkg",
     "crates/decryption-coordinator",
     "crates/integration-tests",
+    "crates/mock-chain",
+    "crates/validator",
 ]
 
 [workspace.package]
