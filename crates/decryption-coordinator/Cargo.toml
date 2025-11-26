@@ -1,28 +1,29 @@
 [package]
-name = "auction-settler"
+name = "auction-decryption-coordinator"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
 repository.workspace = true
 authors.workspace = true
-description = "Permissionless settlement service for threshold-encrypted auctions"
+description = "Threshold decryption coordination for private auctions"
 
 [dependencies]
 auction-types.workspace = true
 auction-crypto.workspace = true
-auction-circuit.workspace = true
 tokio.workspace = true
 borsh.workspace = true
 serde.workspace = true
 serde_json.workspace = true
 sha2.workspace = true
 anyhow.workspace = true
+thiserror.workspace = true
+hex.workspace = true
 tracing = "0.1"
 
-# SP1 is optional - only needed for real proving
-sp1-sdk = { workspace = true, optional = true }
+# BLS cryptography
+bls12_381.workspace = true
+group.workspace = true
+ff.workspace = true
 
-[features]
-default = []
-# Enable real SP1 proving (requires circuit ELF to be built)
-sp1-proving = ["sp1-sdk"]
+[dev-dependencies]
+rand.workspace = true

@@ -5,9 +5,11 @@ members = [
     "crates/crypto",
     "crates/module",
     "crates/circuit",
-    # "crates/settler", # TODO: Re-enable after fixing SP1 SDK version
+    "crates/settler",
     "crates/client",
     "crates/dkg",
+    "crates/decryption-coordinator",
+    "crates/integration-tests",
 ]
 
 [workspace.package]
@@ -26,6 +28,7 @@ auction-circuit = { path = "crates/circuit" }
 auction-settler = { path = "crates/settler" }
 auction-client = { path = "crates/client" }
 auction-dkg = { path = "crates/dkg" }
+auction-decryption-coordinator = { path = "crates/decryption-coordinator" }
 
 # BLS Cryptography (Commonware-compatible)
 blst = "0.3"
@@ -53,8 +56,8 @@ serde_json = "1.0"
 hex = "0.4"
 
 # SP1 zkVM
-sp1-sdk = "4.0"
-sp1-zkvm = "4.0"
+sp1-sdk = "5.0"
+sp1-zkvm = "5.0"
 
 # Async
 tokio = { version = "1.0", features = ["full"] }
