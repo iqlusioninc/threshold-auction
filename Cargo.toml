@@ -1,0 +1,74 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/types",
+    "crates/crypto",
+    "crates/module",
+    "crates/circuit",
+    # "crates/settler", # TODO: Re-enable after fixing SP1 SDK version
+    "crates/client",
+    "crates/dkg",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+repository = "https://github.com/iqlusioninc/threshold-auction"
+authors = ["Iqlusion Inc."]
+
+[workspace.dependencies]
+# Internal crates
+auction-types = { path = "crates/types" }
+auction-crypto = { path = "crates/crypto" }
+auction-module = { path = "crates/module" }
+auction-circuit = { path = "crates/circuit" }
+auction-settler = { path = "crates/settler" }
+auction-client = { path = "crates/client" }
+auction-dkg = { path = "crates/dkg" }
+
+# BLS Cryptography (Commonware-compatible)
+blst = "0.3"
+bls12_381 = "0.8"
+group = "0.13"
+ff = "0.13"
+pairing = "0.23"
+
+# Threshold Cryptography
+vsss-rs = "4.0"
+
+# General Crypto
+rand = "0.8"
+rand_core = "0.6"
+sha2 = "0.10"
+sha3 = "0.10"
+hkdf = "0.12"
+aes-gcm = "0.10"
+zeroize = { version = "1.7", features = ["derive"] }
+
+# Serialization
+borsh = { version = "1.0", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+hex = "0.4"
+
+# SP1 zkVM
+sp1-sdk = "4.0"
+sp1-zkvm = "4.0"
+
+# Async
+tokio = { version = "1.0", features = ["full"] }
+
+# Error handling
+thiserror = "2.0"
+anyhow = "1.0"
+
+# Testing
+proptest = "1.0"
+
+[profile.release]
+lto = true
+codegen-units = 1
+
+[profile.dev]
+opt-level = 1

@@ -1,0 +1,29 @@
+[package]
+name = "auction-crypto"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+description = "Threshold BLS encryption primitives for private auctions"
+
+[dependencies]
+auction-types.workspace = true
+blst.workspace = true
+bls12_381.workspace = true
+group.workspace = true
+ff.workspace = true
+pairing.workspace = true
+rand.workspace = true
+rand_core.workspace = true
+sha2.workspace = true
+sha3.workspace = true
+hkdf.workspace = true
+aes-gcm.workspace = true
+zeroize.workspace = true
+borsh.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true

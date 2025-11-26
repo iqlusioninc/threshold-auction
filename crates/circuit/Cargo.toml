@@ -1,0 +1,17 @@
+[package]
+name = "auction-circuit"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+description = "SP1 zkVM circuit for proving auction correctness"
+
+[dependencies]
+auction-types.workspace = true
+borsh.workspace = true
+serde.workspace = true
+sha2.workspace = true
+
+[target.'cfg(target_os = "zkvm")'.dependencies]
+sp1-zkvm.workspace = true

@@ -1,0 +1,27 @@
+[package]
+name = "auction-dkg"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+description = "Distributed Key Generation for threshold BLS encryption"
+
+[dependencies]
+auction-types.workspace = true
+auction-crypto.workspace = true
+vsss-rs.workspace = true
+blst.workspace = true
+bls12_381.workspace = true
+group.workspace = true
+ff.workspace = true
+rand.workspace = true
+rand_core.workspace = true
+sha2.workspace = true
+zeroize.workspace = true
+borsh.workspace = true
+serde.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
